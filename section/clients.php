@@ -1,7 +1,7 @@
 <?php
 if ( have_rows('client') ) {
     ?>
-    <div class="container bg-clients m-0 mt-5 mb-5 pb-1 pt-1 mw-100">
+    <div class="container bg-secondary m-0 mt-5 mb-5 pb-1 pt-1 mw-100">
         <div class="row m-4 m-sm-0 pt-sm-0 pt-5 pb-sm-0 pb-3">
     <?php
     while ( have_rows('client') ) {
