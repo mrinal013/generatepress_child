@@ -25,7 +25,7 @@ if ( ! empty( $slider_posts ) ) {
                     <div class="col-md-6 col-sm-12">
                         <div class="carousel-caption position-relative bg-white">
                             <div class="caption-div">
-                                <h1 class="raleway-semibold text-dark fw-bold"><a href="<?php the_permalink(); ?>" class="text-dark"><?php the_title(); ?></a></h1>
+                                <h1 class="raleway-semibold text-dark fw-bold"><?php the_title(); ?></h1>
                                 <p class="post-author"><?php echo esc_html__( 'BY ', 'generatepress' ) . esc_html( get_the_author_meta( 'display_name' ) ); ?></p>
                                 <p class="slider-description"><?php the_field('post_description'); ?></p>
                             </div>
