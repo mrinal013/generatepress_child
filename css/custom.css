@@ -7530,10 +7530,7 @@ textarea.form-control-lg {
   font-family: 'Raleway Semibold', sans-serif; }
 
 #footer-widgets .footer-widgets-container {
-  min-width: 100%; }
-
-#footer-widgets .footer-widgets-container .inside-footer-widgets {
-  margin-left: 0; }
+  padding-right: 0; }
 
 /*********************
 ***** Navigation *****
