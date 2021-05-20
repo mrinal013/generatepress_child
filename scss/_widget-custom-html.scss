@@ -1,0 +1,17 @@
+#review-lef-sidebar {
+    .widget_custom_html {
+        background-color: #F5FAFE;
+        .widget-title {
+            padding: 20px;
+            border-bottom: 1px solid #C9C9C9;
+            margin: 0;
+            font-family: 'Raleway Bold', sans-serif;
+        }
+        .custom-html-widget {
+            padding: 20px;
+            li {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

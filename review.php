@@ -13,6 +13,7 @@ get_header();
         </aside>
         <article class="col-md-6">
             <h1 class="fs-2 raleway-semibold"><?php the_field('title'); ?></h1>
+            <p class="post-author"><?php echo 'BY ' . esc_html( get_the_author_meta('display_name') ); ?></p>
             <?php the_field('description'); ?>
         </article>
         <aside class="col-md-3">

@@ -253,9 +253,10 @@ function faq_cb() {
     global $post;
     $faqs = get_field( 'faq', $post->ID );
     ob_start();
+    if ( ! empty( $faqs ) ) :
     ?>
-    <h2 class="">FAQ</h2>
-    <div class="accordion accordion-flush" id="accordionFaq">
+    <h2 class="border-top border-bottom py-4 raleway-semibold mb-0 mt-5">FAQ</h2>
+    <div class="accordion accordion-flush border-bottom mb-5" id="accordionFaq">
         <?php foreach ( $faqs as $key => $value ) : ?>
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingFaqOne">
@@ -272,6 +273,7 @@ function faq_cb() {
         <?php endforeach; ?>
     </div>
     <?php
+    endif;
     return ob_get_clean();
 }
 

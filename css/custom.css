@@ -7838,19 +7838,22 @@ body {
   padding-right: 0;
   background-color: transparent;
   color: #191818;
-  font-size: 16px; }
+  font-size: 16px;
+  box-shadow: none; }
   #accordionFaq .accordion-button:focus {
     box-shadow: none; }
   #accordionFaq .accordion-button:hover {
     color: #191818; }
   #accordionFaq .accordion-button::after {
     content: '\f068';
+    color: #0056FB;
     font-family: FontAwesome;
     background-image: none;
     width: auto;
     height: auto; }
   #accordionFaq .accordion-button.collapsed::after {
-    content: '\f067'; }
+    content: '\f067';
+    color: #999999; }
 
 #accordionFaq .accordion-body {
   color: #999999;
@@ -7862,12 +7865,25 @@ body {
   margin-left: 0; }
   .pros-cons ul li {
     padding-left: 15px;
+    padding-bottom: 20px;
     position: relative; }
     .pros-cons ul li::before {
       content: '\f105';
       font-family: FontAwesome;
       position: absolute;
       left: 0; }
+
+#review-lef-sidebar .widget_custom_html {
+  background-color: #F5FAFE; }
+  #review-lef-sidebar .widget_custom_html .widget-title {
+    padding: 20px;
+    border-bottom: 1px solid #C9C9C9;
+    margin: 0;
+    font-family: 'Raleway Bold', sans-serif; }
+  #review-lef-sidebar .widget_custom_html .custom-html-widget {
+    padding: 20px; }
+    #review-lef-sidebar .widget_custom_html .custom-html-widget li {
+      margin-bottom: 20px; }
 
 a.cta-btn {
   color: #fff;

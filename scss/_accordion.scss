@@ -5,6 +5,7 @@
       background-color: transparent;
       color: #191818;
       font-size: 16px;
+      box-shadow: none;
       &:focus {
           box-shadow: none;
       }
@@ -13,13 +14,15 @@
       }
       &::after {
         content: '\f068';
+        color: #0056FB;
         font-family: FontAwesome;
         background-image: none;
         width: auto;
         height: auto;
-      }
-      &.collapsed::after {
+    }
+    &.collapsed::after {
         content: '\f067';
+        color: #999999;
       }
   }
   .accordion-body {
