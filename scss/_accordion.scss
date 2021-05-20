@@ -1,0 +1,30 @@
+#accordionFaq {
+  .accordion-button {
+      padding-left: 0;
+      padding-right: 0;
+      background-color: transparent;
+      color: #191818;
+      font-size: 16px;
+      &:focus {
+          box-shadow: none;
+      }
+      &:hover {
+          color: #191818;
+      }
+      &::after {
+        content: '\f068';
+        font-family: FontAwesome;
+        background-image: none;
+        width: auto;
+        height: auto;
+      }
+      &.collapsed::after {
+        content: '\f067';
+      }
+  }
+  .accordion-body {
+      color: #999999;
+      font-size: 14px;
+      padding-left: 0;
+  } 
+}

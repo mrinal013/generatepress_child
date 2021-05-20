@@ -1,0 +1,16 @@
+.pros-cons {
+    ul {
+        list-style: none;
+        margin-left: 0;
+        li {
+            padding-left: 15px;
+            position: relative;
+            &::before {
+                content: '\f105';
+                font-family: FontAwesome;
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+}

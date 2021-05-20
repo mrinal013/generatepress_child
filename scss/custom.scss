@@ -20,6 +20,7 @@
 }
 
 $secondary: #F9F9F9;
+$info: #F3F9FE;
 // $font-family-base: Helvetica, Arial, sans-serif;
 @import "../node_modules/bootstrap/scss/bootstrap";
 
@@ -53,6 +54,13 @@ $secondary: #F9F9F9;
 }
 #footer-widgets .footer-widgets-container {
     padding-right: 0;
+}
+.site-content a {
+    color: #0056FB;
+    text-decoration: underline;
+}
+body {
+    font-family: Helvetica;
 }
 
 /*********************
@@ -353,6 +361,64 @@ $secondary: #F9F9F9;
     padding-left: 0 !important;
 }
 
+/********************
+***** Accordion *****
+*********************/
+// #accordionExample,
+// #accordionFlushExample {
+//     .accordion-item {
+//         border: none;
+//     }
+//     .accordion-item,
+//     .accordion-header,
+//     .accordion-button {
+//         background: transparent;
+//         position: relative;
+//     }
+//     .accordion-button {
+//         &:hover,
+//         &:focus {
+//             color: #000;
+//             box-shadow: none;
+//         }
+//     }
+//     .accordion-button::after {
+//         display: none;
+//     }
+//     .accordion-button::before {
+//         content: '\f105';
+//         font-family: FontAwesome;
+//         position: absolute;
+//         left: 0;
+//         transform: rotate(90deg);
+//     }
+//     .accordion-button.collapsed::before {
+//         transform: rotate(0);
+//     }
+// }
+@import './accordion';
+@import './pros-cons';
+
+a.cta-btn {
+    color: #fff;
+    text-decoration: none;
+        &:hover,
+        &:focus {
+            color: #fff;
+            box-shadow: none;
+        }
+}
+.left-bar {
+    position: relative;
+    &:before {
+        content: '';
+        width: 3px;
+        height: 100%;
+        background-color: #0056FB;
+        position: absolute;
+        left: 0;
+    }
+}
 /**********************
 ***** Media Query *****
 ***********************/

@@ -24,7 +24,9 @@ add_action( 'wp_enqueue_scripts', 'yield_enqueue_style' );
 
 add_action( 'generate_before_footer_content', 'about_section' );
 function about_section() {
-    include_once "section/about.php";
+    if ( is_front_page() ) {
+        include_once "section/about.php";
+    }
 }
 add_action( 'wp_head', 'remove_parent_theme_action' );
 function remove_parent_theme_action() {
@@ -173,81 +175,33 @@ function get_thumbnail_cb() {
 add_shortcode( 'pros_cons', 'pros_cons_cb' );
 function pros_cons_cb() {
     global $post;
+    $pros = get_field('pros', $post->ID );
+    $cons = get_field('cons', $post->ID );
     ob_start();
     ?>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="accordion accordion-flush" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Accordion Item #1
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
-                </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
+    <div class="row pros-cons">
+        <div class="col-md-6 p-2 ps-0">
+            <div class="bg-info pt-5">
+                <h5 class="fw-bold left-bar ps-4 m-0"><?php esc_html_e( 'PROS', 'generatepress' ); ?></h5>
+                <ul class="p-4">
+                <?php foreach ( $pros as $key => $value ) : ?>
+                    <li>
+                        <?php echo esc_html($value['topic']); ?>        
+                    </li>
+                <?php endforeach; ?>
+                </ul>
+            </div>
         </div>
-        <div class="col-md-6">
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            Accordion Item #1
-                        </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Accordion Item #2
-                        </button>
-                    </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                            Accordion Item #3
-                        </button>
-                    </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                    </div>
-                </div>
+        <div class="col-md-6 p-2 ps-0">
+            <div class="bg-info pt-5">
+                <h5 class="left-bar fw-bold ps-4 m-0"><?php esc_html_e( 'CONS', 'generatepress' ); ?></h5>
+                <ul class="p-4">
+                <?php foreach ( $cons   as $key => $value ) : ?>
+                    <li>
+                        <?php echo esc_html( $value['topic'] ); ?>
+                    </li>
+                <?php endforeach; ?>
+                </ul>
             </div>
         </div>
     </div>
@@ -261,10 +215,13 @@ function pros_cons_cb() {
 add_shortcode( 'cta_button', 'cta_button_cb' );
 function cta_button_cb() {
     global $post;
+    $text = get_field( 'cta_button_text', $post->ID );
+    $bg_color = get_field( 'cta_button_color', $post->ID);
+    $link = get_field( 'cta_button_link', $post->ID);
     ob_start();
     ?>
-    <div class="d-grid gap-2">
-        <button class="btn btn-primary" type="button">Buy Now</button>
+    <div class="d-grid">
+        <a href="<?php echo esc_attr( $link ); ?>" class="btn cta-btn" type="button" style="background-color: <?php echo esc_attr( $bg_color ); ?>"><?php echo esc_html( $text ); ?></a>
     </div>
     <?php
     return ob_get_clean();
@@ -276,11 +233,13 @@ function cta_button_cb() {
 add_shortcode( 'text', 'text_cb' );
 function text_cb() {
     global $post;
+    $title = get_field( 'notice_title', $post->ID );
+    $description = get_field( 'notice_description', $post->ID );
     ob_start();
     ?>
-    <div class="row bg-primary">
-        <h3>TEXT HERE</h3>
-        <p>Performing at the highest level requires many things and what it requires most is a peak level of readiness. As a performance coach, it is my job to make sure that the people I coach are as ready and prepared as possible.</p>
+    <div class="row bg-info">
+        <h4 class="fw-bold left-bar raleway-semibold"><?php echo esc_html( $title ); ?></h4>
+        <p><?php echo esc_html( $description ); ?></p>
     </div>
     <?php
     return ob_get_clean();
@@ -291,46 +250,27 @@ function text_cb() {
  */
 add_shortcode( 'faq', 'faq_cb' );
 function faq_cb() {
+    global $post;
+    $faqs = get_field( 'faq', $post->ID );
     ob_start();
     ?>
+    <h2 class="">FAQ</h2>
     <div class="accordion accordion-flush" id="accordionFaq">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFaqOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaqOne" aria-expanded="true" aria-controls="collapseFaqOne">
-                        Accordion Item #1
-                        </button>
-                    </h2>
-                    <div id="collapseFaqOne" class="accordion-collapse collapse show" aria-labelledby="headingFaqOne" data-bs-parent="#accordionFaq">
-                        <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
+        <?php foreach ( $faqs as $key => $value ) : ?>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFaqOne">
+                <button class="raleway-semibold accordion-button <?php echo $key ? 'collapsed' : ''; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq<?php echo esc_attr( $key ); ?>" aria-expanded="true" aria-controls="collapseFaqOne">
+                <?php echo esc_html( $value['faq_title'] ); ?>
+                </button>
+            </h2>
+            <div id="collapseFaq<?php echo esc_attr( $key ); ?>" class="accordion-collapse collapse <?php echo ! $key ? 'show' : ''; ?>" aria-labelledby="headingFaqOne" data-bs-parent="#accordionFaq">
+                <div class="accordion-body">
+                <?php echo esc_html( $value['faq_description'] ); ?>
                 </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingFaqTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaqTwo" aria-expanded="false" aria-controls="collapseFaqTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseFaqTwo" class="accordion-collapse collapse" aria-labelledby="headingFaqTwo" data-bs-parent="#accordionFaq">
-      <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
+            </div>
+        </div>
+        <?php endforeach; ?>
     </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingFaqThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaqThree" aria-expanded="false" aria-controls="collapseFaqThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseFaqThree" class="accordion-collapse collapse" aria-labelledby="headingFaqThree" data-bs-parent="#accordionFaq">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
     <?php
     return ob_get_clean();
 }
