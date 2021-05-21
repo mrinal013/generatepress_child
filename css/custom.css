@@ -7873,17 +7873,29 @@ body {
       position: absolute;
       left: 0; }
 
-#review-lef-sidebar .widget_custom_html {
-  background-color: #F5FAFE; }
-  #review-lef-sidebar .widget_custom_html .widget-title {
-    padding: 20px;
-    border-bottom: 1px solid #C9C9C9;
-    margin: 0;
-    font-family: 'Raleway Bold', sans-serif; }
-  #review-lef-sidebar .widget_custom_html .custom-html-widget {
-    padding: 20px; }
-    #review-lef-sidebar .widget_custom_html .custom-html-widget li {
-      margin-bottom: 20px; }
+#review-left-sidebar {
+  position: sticky;
+  top: 90px;
+  height: fit-content; }
+  #review-left-sidebar .widget_custom_html {
+    background-color: #F5FAFE; }
+    #review-left-sidebar .widget_custom_html .widget-title {
+      padding: 20px;
+      border-bottom: 1px solid #C9C9C9;
+      margin: 0;
+      font-family: 'Raleway Bold', sans-serif; }
+    #review-left-sidebar .widget_custom_html .custom-html-widget {
+      padding: 20px; }
+      #review-left-sidebar .widget_custom_html .custom-html-widget ul {
+        margin-top: 0; }
+      #review-left-sidebar .widget_custom_html .custom-html-widget li {
+        margin-bottom: 15px; }
+        #review-left-sidebar .widget_custom_html .custom-html-widget li h6, #review-left-sidebar .widget_custom_html .custom-html-widget li .h6,
+        #review-left-sidebar .widget_custom_html .custom-html-widget li li {
+          font-size: 16px;
+          margin-bottom: 15px; }
+        #review-left-sidebar .widget_custom_html .custom-html-widget li h6, #review-left-sidebar .widget_custom_html .custom-html-widget li .h6 {
+          font-weight: 700; }
 
 a.cta-btn {
   color: #fff;
