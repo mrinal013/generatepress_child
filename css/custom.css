@@ -7729,7 +7729,7 @@ body {
   background-color: transparent; }
 
 .bg-about {
-  background-color: #F3F9FE;
+  background-color: #232323;
   margin-bottom: 5rem; }
 
 .bg-clients {
@@ -7738,7 +7738,10 @@ body {
 /*****************
 ***** Footer *****
 ******************/
-.bg-dark,
+.site-footer .footer-widgets-container .social .inner-padding {
+  padding: 0; }
+
+.bg-about,
 .site-info {
   background-color: #000000 !important; }
 
@@ -7845,9 +7848,10 @@ body {
   #accordionFaq .accordion-button:hover {
     color: #191818; }
   #accordionFaq .accordion-button::after {
-    content: '\f068';
+    content: "\f068";
     color: #0056FB;
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
     background-image: none;
     width: auto;
     height: auto; }
@@ -7869,33 +7873,63 @@ body {
     position: relative; }
     .pros-cons ul li::before {
       content: '\f105';
-      font-family: FontAwesome;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 700;
+      color: #999999;
       position: absolute;
       left: 0; }
 
 #review-left-sidebar {
   position: sticky;
   top: 90px;
-  height: fit-content; }
-  #review-left-sidebar .widget_custom_html {
-    background-color: #F5FAFE; }
-    #review-left-sidebar .widget_custom_html .widget-title {
+  height: fit-content;
+  margin-bottom: 30px; }
+  #review-left-sidebar .widget_custom_html:first-of-type {
+    background-color: #F3F9FE;
+    padding-bottom: 30px; }
+    #review-left-sidebar .widget_custom_html:first-of-type .widget-title {
+      margin-bottom: 20px;
       padding: 20px;
-      border-bottom: 1px solid #C9C9C9;
-      margin: 0;
-      font-family: 'Raleway Bold', sans-serif; }
-    #review-left-sidebar .widget_custom_html .custom-html-widget {
-      padding: 20px; }
-      #review-left-sidebar .widget_custom_html .custom-html-widget ul {
-        margin-top: 0; }
-      #review-left-sidebar .widget_custom_html .custom-html-widget li {
-        margin-bottom: 15px; }
-        #review-left-sidebar .widget_custom_html .custom-html-widget li h6, #review-left-sidebar .widget_custom_html .custom-html-widget li .h6,
-        #review-left-sidebar .widget_custom_html .custom-html-widget li li {
-          font-size: 16px;
-          margin-bottom: 15px; }
-        #review-left-sidebar .widget_custom_html .custom-html-widget li h6, #review-left-sidebar .widget_custom_html .custom-html-widget li .h6 {
-          font-weight: 700; }
+      border-bottom: 1px solid #C9C9C9; }
+    #review-left-sidebar .widget_custom_html:first-of-type ul {
+      display: block;
+      padding-left: 20px; }
+  #review-left-sidebar .widget_custom_html:last-of-type {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #000; }
+    #review-left-sidebar .widget_custom_html:last-of-type ul {
+      padding-left: calc(8%); }
+
+.widget_custom_html .widget-title {
+  padding: 20px;
+  padding: 0;
+  font-family: 'Raleway Bold', sans-serif; }
+
+.widget_custom_html .custom-html-widget {
+  padding: 0; }
+  .widget_custom_html .custom-html-widget ul {
+    margin-top: 0;
+    display: flex; }
+  .widget_custom_html .custom-html-widget li {
+    margin-bottom: 0;
+    margin-right: 10px; }
+    .widget_custom_html .custom-html-widget li:last-of-type {
+      margin-right: 0; }
+    .widget_custom_html .custom-html-widget li h6, .widget_custom_html .custom-html-widget li .h6,
+    .widget_custom_html .custom-html-widget li li {
+      font-size: 16px;
+      margin-bottom: 15px; }
+    .widget_custom_html .custom-html-widget li h6, .widget_custom_html .custom-html-widget li .h6 {
+      font-weight: 700; }
+    .widget_custom_html .custom-html-widget li a {
+      background-color: #232323;
+      padding: 8px; }
+      .widget_custom_html .custom-html-widget li a i {
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        color: #fff; }
 
 a.cta-btn {
   color: #fff;

@@ -8,7 +8,9 @@
             position: relative;
             &::before {
                 content: '\f105';
-                font-family: FontAwesome;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 700;
+                color: #999999;
                 position: absolute;
                 left: 0;
             }

@@ -12,8 +12,9 @@ function yield_enqueue_style() {
 	    wp_enqueue_style( 'parent-stylesheet', trailingslashit( get_template_directory_uri() ) . 'style.css', false );
         
     }
-
+    
     // load active theme stylesheet in both cases
+    wp_enqueue_style( 'fa', 'https://use.fontawesome.com/releases/v5.15.3/css/all.css' );
     wp_enqueue_style( 'custom-sylesheet', get_stylesheet_directory_uri() . '/css/custom.css' );
     wp_enqueue_style( 'theme-stylesheet', get_stylesheet_uri(), false );
 
@@ -60,7 +61,7 @@ if ( ! function_exists( 'yield_footer_widgets' ) ) {
      */
     function yield_footer_widgets() {
         ?>
-            <div id="footer-widgets" class="site footer-widgets bg-dark">
+            <div id="footer-widgets" class="site footer-widgets bg-about m-0">
                 <div <?php generate_do_element_classes( 'inside_footer' ); ?>>
                     <div class="inside-footer-widgets">
                         <div class="row">
@@ -105,7 +106,7 @@ if ( ! function_exists( 'yield_construct_footer' ) ) {
             $inside_site_info_class = ' grid-container grid-parent';
 
             if ( generate_is_using_flexbox() ) {
-                $inside_site_info_class = ' grid-container bg-dark';
+                $inside_site_info_class = ' grid-container';
             }
         }
         ?>

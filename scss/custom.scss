@@ -255,7 +255,7 @@ body {
     background-color: transparent;
 }
 .bg-about {
-    background-color: #F3F9FE;
+    background-color: #232323;
     margin-bottom: 5rem;
 }
 .bg-clients {
@@ -265,7 +265,10 @@ body {
 /*****************
 ***** Footer *****
 ******************/
-.bg-dark,
+.site-footer .footer-widgets-container .social .inner-padding {
+    padding: 0;
+}
+.bg-about,
 .site-info {
     background-color: #000000 !important;
 }

@@ -13,9 +13,10 @@
           color: #191818;
       }
       &::after {
-        content: '\f068';
+        content: "\f068";
         color: #0056FB;
-        font-family: FontAwesome;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 700;
         background-image: none;
         width: auto;
         height: auto;
