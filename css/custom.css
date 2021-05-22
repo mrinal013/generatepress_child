@@ -7729,8 +7729,11 @@ body {
   background-color: transparent; }
 
 .bg-about {
-  background-color: #232323;
+  background-color: #F3F9FE;
   margin-bottom: 5rem; }
+
+.footer-widgets.bg-about {
+  background: #000; }
 
 .bg-clients {
   background-color: #F9F9F9; }
@@ -7741,7 +7744,6 @@ body {
 .site-footer .footer-widgets-container .social .inner-padding {
   padding: 0; }
 
-.bg-about,
 .site-info {
   background-color: #000000 !important; }
 
@@ -7864,7 +7866,16 @@ body {
   font-size: 14px;
   padding-left: 0; }
 
+.pros-cons .bg-info {
+  padding-top: 35px;
+  padding-bottom: 20px; }
+
+.pros-cons .left-bar {
+  padding-left: 30px; }
+
 .pros-cons ul {
+  padding-top: 30px;
+  padding-left: 30px;
   list-style: none;
   margin-left: 0; }
   .pros-cons ul li {

@@ -182,9 +182,9 @@ function pros_cons_cb() {
     ?>
     <div class="row pros-cons">
         <div class="col-md-6 p-2 ps-0">
-            <div class="bg-info pt-5">
-                <h5 class="fw-bold left-bar ps-4 m-0"><?php esc_html_e( 'PROS', 'generatepress' ); ?></h5>
-                <ul class="p-4">
+            <div class="bg-info">
+                <h5 class="fw-bold left-bar m-0"><?php esc_html_e( 'PROS', 'generatepress' ); ?></h5>
+                <ul class="">
                 <?php foreach ( $pros as $key => $value ) : ?>
                     <li>
                         <?php echo esc_html($value['topic']); ?>        
@@ -194,9 +194,9 @@ function pros_cons_cb() {
             </div>
         </div>
         <div class="col-md-6 p-2 ps-0">
-            <div class="bg-info pt-5">
-                <h5 class="left-bar fw-bold ps-4 m-0"><?php esc_html_e( 'CONS', 'generatepress' ); ?></h5>
-                <ul class="p-4">
+            <div class="bg-info">
+                <h5 class="left-bar fw-bold m-0"><?php esc_html_e( 'CONS', 'generatepress' ); ?></h5>
+                <ul class="">
                 <?php foreach ( $cons   as $key => $value ) : ?>
                     <li>
                         <?php echo esc_html( $value['topic'] ); ?>
