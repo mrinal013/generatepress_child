@@ -44,9 +44,9 @@ class Foo_Widget extends WP_Widget {
                     <div class="col-md-3">
                         <?php echo esc_html( sprintf( "%'.02d", $posts->current_post + 1 ) ); ?>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9 gx-0">
                         <h6><?php the_title(); ?></h6>
-                        <p><?php the_excerpt(); ?></p>
+                        <p><?php echo get_the_excerpt(); ?></p>
                     </div>
                 </div>
                 <?php

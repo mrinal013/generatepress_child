@@ -278,6 +278,8 @@ function faq_cb() {
     return ob_get_clean();
 }
 
+remove_filter ('the_exceprt', 'wpautop');
+
 /**
  * User 
  */

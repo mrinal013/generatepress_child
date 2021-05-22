@@ -7949,6 +7949,33 @@ p {
         text-align: center;
         color: #fff; }
 
+.widget_related_widget {
+  background-color: #F3F9FE;
+  margin-top: 20px; }
+  .widget_related_widget .widget-title {
+    font-family: 'Raleway Bold', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid #C9C9C9;
+    padding: 20px; }
+  .widget_related_widget .row {
+    padding: 0 20px; }
+  .widget_related_widget .col-md-3 {
+    font-family: 'Raleway Bold', sans-serif;
+    font-size: 33px;
+    margin-top: -15px;
+    color: #C9C9C9; }
+  .widget_related_widget .col-md-9 {
+    padding-right: 20px; }
+  .widget_related_widget h6, .widget_related_widget .h6 {
+    font-family: 'Raleway Semibold', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0; }
+  .widget_related_widget p {
+    font-size: 12px;
+    color: #C9C9C9; }
+
 a.cta-btn {
   color: #fff;
   text-decoration: none; }
