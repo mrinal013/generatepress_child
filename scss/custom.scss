@@ -27,6 +27,7 @@ $info: #F3F9FE;
 /******************
 ***** General *****
 *******************/
+
 #masthead {
     position: fixed;
     z-index: 2;
@@ -61,6 +62,13 @@ $info: #F3F9FE;
 }
 body {
     font-family: Helvetica;
+}
+p {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+}
+.page-template-review h4 {
+    font-family: 'Raleway', sans-serif;
 }
 
 /*********************
@@ -423,6 +431,11 @@ a.cta-btn {
         background-color: #0056FB;
         position: absolute;
         left: 0;
+    }
+}
+.notice {
+    p {
+        font-size: 15px;
     }
 }
 /**********************

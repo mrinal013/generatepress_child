@@ -7539,6 +7539,13 @@ textarea.form-control-lg {
 body {
   font-family: Helvetica; }
 
+p {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px; }
+
+.page-template-review h4, .page-template-review .h4 {
+  font-family: 'Raleway', sans-serif; }
+
 /*********************
 ***** Navigation *****
 **********************/
@@ -7958,6 +7965,9 @@ a.cta-btn {
     background-color: #0056FB;
     position: absolute;
     left: 0; }
+
+.notice p {
+  font-size: 15px; }
 
 /**********************
 ***** Media Query *****

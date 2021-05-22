@@ -238,9 +238,9 @@ function text_cb() {
     $description = get_field( 'notice_description', $post->ID );
     ob_start();
     ?>
-    <div class="row bg-info">
-        <h4 class="fw-bold left-bar raleway-semibold"><?php echo esc_html( $title ); ?></h4>
-        <p><?php echo esc_html( $description ); ?></p>
+    <div class="row bg-info pt-4 notice">
+        <h5 class="fw-bold left-bar raleway-semibold ps-4 mb-3"><?php echo esc_html( $title ); ?></h5>
+        <p class="ps-4 pe-4"><?php echo esc_html( $description ); ?></p>
     </div>
     <?php
     return ob_get_clean();
@@ -342,8 +342,6 @@ function dequeue_jquery_migrate( $scripts ) {
 }
 add_action( 'wp_default_scripts', 'dequeue_jquery_migrate' );
 
-
-
 add_action('init', 'remove_editor_from_post');
 function remove_editor_from_post() {
 		$id = $_GET['post'];
@@ -353,3 +351,5 @@ function remove_editor_from_post() {
 			remove_post_type_support('page', 'editor');
 		}
 }
+
+include_once "inc/related-widget.php";
