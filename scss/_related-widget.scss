@@ -1,4 +1,7 @@
 .widget_related_widget {
+    position: sticky;
+    height: max-content;
+    top: 62px;
     background-color: $info;
     margin-top: 20px;
     .widget-title {
@@ -16,6 +19,7 @@
         font-size: 33px;
         margin-top: -15px;
         color: #C9C9C9;
+        padding: 0;
     }
     .col-md-9 {
         padding-right: 20px;
@@ -30,4 +34,7 @@
         font-size: 12px;
         color: #C9C9C9;
     }
+}
+.logged-in .widget_related_widget {
+    top: 92px;
 }

@@ -1,8 +1,7 @@
 #review-left-sidebar {
     position: sticky;
-    top: 90px;
-    height: fit-content;
-    margin-bottom: 30px;
+    top: 60px;
+    height: max-content;
     .widget_custom_html:first-of-type {
         background-color: $info;
         padding-bottom: 30px;
@@ -31,6 +30,9 @@
         }
     }
     
+}
+.logged-in #review-left-sidebar {
+    top: 90px;
 }
 .widget_custom_html {
     // background-color: #232323 !important;

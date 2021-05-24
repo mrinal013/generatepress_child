@@ -181,7 +181,7 @@ function pros_cons_cb() {
     ob_start();
     ?>
     <div class="row pros-cons">
-        <div class="col-md-6 p-2 ps-0">
+        <div class="col-md-6 p-2">
             <div class="bg-info">
                 <h5 class="fw-bold left-bar m-0"><?php esc_html_e( 'PROS', 'generatepress' ); ?></h5>
                 <ul class="">
@@ -193,7 +193,7 @@ function pros_cons_cb() {
                 </ul>
             </div>
         </div>
-        <div class="col-md-6 p-2 ps-0">
+        <div class="col-md-6 p-2">
             <div class="bg-info">
                 <h5 class="left-bar fw-bold m-0"><?php esc_html_e( 'CONS', 'generatepress' ); ?></h5>
                 <ul class="">
