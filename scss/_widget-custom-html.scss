@@ -16,27 +16,19 @@
         }
     }
     .widget_custom_html:last-of-type {
-        margin-top: 20px;
         padding: 20px;
         background-color: #000;
         ul {
-            padding-left: calc(8%);
+            justify-content: center;
         }
-    }
-    .custom-html-widget {
-        
-        ul {
-            // display: block;
-        }
-    }
-    
+    }    
 }
 .logged-in #review-left-sidebar {
     top: 90px;
 }
+
 .widget_custom_html {
-    // background-color: #232323 !important;
-    .widget-title {
+     .widget-title {
         padding: 20px;
         padding: 0;
         font-family: 'Raleway Bold', sans-serif;
@@ -53,20 +45,21 @@
             &:last-of-type {
                 margin-right: 0;
             }
-            h6,
+            h6 a,
             li {
                 font-size: 16px;
                 margin-bottom: 15px;
+                background-color: transparent;
             }
-            h6 {
-                font-weight: 700;
-            }
+
             a {
+                font-weight: 700;
+                text-decoration: none;
                 background-color: #232323;
+                color: $dark;
                 padding: 8px;
                 i {
                     width: 25px;
-                    height: 25px;
                     text-align: center;
                     color: $white;
                 }

@@ -7913,11 +7913,10 @@ p {
       display: block;
       padding-left: 20px; }
   #review-left-sidebar .widget_custom_html:last-of-type {
-    margin-top: 20px;
     padding: 20px;
     background-color: #000; }
     #review-left-sidebar .widget_custom_html:last-of-type ul {
-      padding-left: calc(8%); }
+      justify-content: center; }
 
 .logged-in #review-left-sidebar {
   top: 90px; }
@@ -7937,25 +7936,28 @@ p {
     margin-right: 10px; }
     .widget_custom_html .custom-html-widget li:last-of-type {
       margin-right: 0; }
-    .widget_custom_html .custom-html-widget li h6, .widget_custom_html .custom-html-widget li .h6,
+    .widget_custom_html .custom-html-widget li h6 a, .widget_custom_html .custom-html-widget li .h6 a,
     .widget_custom_html .custom-html-widget li li {
       font-size: 16px;
-      margin-bottom: 15px; }
-    .widget_custom_html .custom-html-widget li h6, .widget_custom_html .custom-html-widget li .h6 {
-      font-weight: 700; }
+      margin-bottom: 15px;
+      background-color: transparent; }
     .widget_custom_html .custom-html-widget li a {
+      font-weight: 700;
+      text-decoration: none;
       background-color: #232323;
+      color: #191818;
       padding: 8px; }
       .widget_custom_html .custom-html-widget li a i {
         width: 25px;
-        height: 25px;
         text-align: center;
         color: #fff; }
 
-.widget_related_widget {
+#review-right-sidebar {
   position: sticky;
   height: max-content;
-  top: 62px;
+  top: 90px; }
+
+.widget_related_widget {
   background-color: #F3F9FE;
   margin-top: 20px; }
   .widget_related_widget .widget-title {

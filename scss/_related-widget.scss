@@ -1,7 +1,9 @@
-.widget_related_widget {
+#review-right-sidebar {
     position: sticky;
     height: max-content;
-    top: 62px;
+    top: 90px;
+}
+.widget_related_widget {
     background-color: $info;
     margin-top: 20px;
     .widget-title {
