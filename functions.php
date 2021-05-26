@@ -238,7 +238,7 @@ function text_cb() {
     $description = get_field( 'notice_description', $post->ID );
     ob_start();
     ?>
-    <div class="row bg-info pt-4 notice">
+    <div class="row bg-info mb-4 pt-4 notice">
         <h5 class="fw-bold left-bar raleway-semibold ps-4 mb-3"><?php echo esc_html( $title ); ?></h5>
         <p class="ps-4 pe-4"><?php echo esc_html( $description ); ?></p>
     </div>
@@ -355,3 +355,7 @@ function remove_editor_from_post() {
 }
 
 include_once "inc/related-widget.php";
+
+// global $wpdb;
+// // $query = $wpdb->prepare( "SELECT * FROM $wpdb->postmeta WHERE `meta_key` = %s", $my_option_name );
+// $results = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->postmeta WHERE `meta_key` = %s", $my_option_name ) );
