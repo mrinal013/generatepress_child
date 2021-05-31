@@ -7547,6 +7547,9 @@ p {
 .page-template-review h4, .page-template-review .h4 {
   font-family: 'Raleway', sans-serif; }
 
+.description {
+  font-size: 14px; }
+
 /*********************
 ***** Navigation *****
 **********************/
@@ -7651,6 +7654,10 @@ p {
 
 .top-subheading {
   color: #191818; }
+
+#breadcrumbs {
+  padding-left: 15px;
+  font-size: 16px; }
 
 /*****************
 ***** slider *****
@@ -7902,21 +7909,32 @@ p {
   position: sticky;
   top: 60px;
   height: max-content; }
-  #review-left-sidebar .widget_custom_html:first-of-type {
+  #review-left-sidebar .ez-toc-widget-container {
     background-color: #F3F9FE;
     padding-bottom: 30px; }
-    #review-left-sidebar .widget_custom_html:first-of-type .widget-title {
+    #review-left-sidebar .ez-toc-widget-container .widget-title {
       margin-bottom: 20px;
       padding: 20px;
-      border-bottom: 1px solid #C9C9C9; }
-    #review-left-sidebar .widget_custom_html:first-of-type ul {
+      border-bottom: 1px solid #C9C9C9;
+      font-family: 'Raleway Bold', sans-serif;
+      font-weight: 700; }
+    #review-left-sidebar .ez-toc-widget-container ul {
       display: block;
       padding-left: 20px; }
+      #review-left-sidebar .ez-toc-widget-container ul .active::before {
+        content: none; }
+      #review-left-sidebar .ez-toc-widget-container ul a {
+        text-decoration: none;
+        color: #191818;
+        font-size: 16px; }
   #review-left-sidebar .widget_custom_html:last-of-type {
     padding: 20px;
     background-color: #000; }
     #review-left-sidebar .widget_custom_html:last-of-type ul {
       justify-content: center; }
+  @media (max-width: 768px) {
+    #review-left-sidebar {
+      display: none; } }
 
 .logged-in #review-left-sidebar {
   top: 90px; }
@@ -7956,6 +7974,9 @@ p {
   position: sticky;
   height: max-content;
   top: 90px; }
+  @media (max-width: 768px) {
+    #review-right-sidebar {
+      display: none; } }
 
 .widget_related_widget {
   background-color: #F3F9FE; }

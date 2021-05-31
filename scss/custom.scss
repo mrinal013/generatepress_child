@@ -73,6 +73,9 @@ p {
 .page-template-review h4 {
     font-family: 'Raleway', sans-serif;
 }
+.description {
+    font-size: 14px;
+}
 
 /*********************
 ***** Navigation *****
@@ -178,6 +181,10 @@ p {
 }
 .top-subheading {
     color: #191818;
+}
+#breadcrumbs {
+    padding-left: 15px;
+    font-size: 16px;
 }
 
 /*****************

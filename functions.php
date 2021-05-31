@@ -152,7 +152,7 @@ function generate_remove_post_image() {
 add_action( 'generate_after_header', function() {
     if ( ! is_home() && ! is_front_page() ) {
         if ( function_exists('yoast_breadcrumb') ) {
-            yoast_breadcrumb( '<div class="grid-container grid-parent pt-5"><p id="breadcrumbs" class="pt-5 ps-2 text-uppercase">','</p></div>' );
+            yoast_breadcrumb( '<div class="grid-container grid-parent pt-5"><p id="breadcrumbs" class="pt-5 text-uppercase">','</p></div>' );
         }
     }
 } );
@@ -165,7 +165,7 @@ function get_thumbnail_cb() {
     global $post;
     ob_start();
     ?>
-    <img src="<?php echo esc_attr( get_the_post_thumbnail_url( $post->ID, 'full' ) ); ?>" class="img-fluid"/>
+    <img src="<?php echo esc_attr( get_the_post_thumbnail_url( $post->ID, 'full' ) ); ?>" class="img-fluid mb-4"/>
     <?php
     return ob_get_clean();
 }
@@ -278,8 +278,6 @@ function faq_cb() {
     return ob_get_clean();
 }
 
-remove_filter ('the_exceprt', 'wpautop');
-
 /**
  * User 
  */
@@ -344,9 +342,11 @@ function dequeue_jquery_migrate( $scripts ) {
 }
 add_action( 'wp_default_scripts', 'dequeue_jquery_migrate' );
 
-add_action('init', 'remove_editor_from_post');
+if ( is_admin() ) {
+    add_action('init', 'remove_editor_from_post');
+}
 function remove_editor_from_post() {
-		$id = $_GET['post'];
+		$id = isset( $_GET['post'] ) ? $_GET['post'] : null;
 		$posts = array(29);
 		if ( in_array( $id, $posts ) ) {
 			$template = get_post_meta($id, '_wp_page_template', true);

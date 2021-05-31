@@ -2,6 +2,9 @@
     position: sticky;
     height: max-content;
     top: 90px;
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 .widget_related_widget {
     background-color: $info;

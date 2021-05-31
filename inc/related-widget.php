@@ -29,12 +29,12 @@ class Foo_Widget extends WP_Widget {
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
-        $args = array(
+        $related_args = array(
             'post_type'      => 'post',
             'tag'            => 'review',
             'posts_per_page' => 3,
         );
-        $posts = new WP_Query( $args );
+        $posts = new WP_Query( $related_args );
         if ( $posts->have_posts() ) {
             echo '<ul>';
             while ( $posts->have_posts() ) {
@@ -46,13 +46,12 @@ class Foo_Widget extends WP_Widget {
                     </div>
                     <div class="col-md-9 gx-0">
                         <h6><?php the_title(); ?></h6>
-                        <p><?php echo get_the_excerpt(); ?></p>
+                        <p><?php echo esc_html( get_the_excerpt() ); ?></p>
                     </div>
                 </div>
                 <?php
             }
         }
-		// echo esc_html__( 'Hello, World!', 'generatepress' );
 		echo $args['after_widget'];
 	}
 

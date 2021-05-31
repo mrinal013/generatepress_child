@@ -2,17 +2,28 @@
     position: sticky;
     top: 60px;
     height: max-content;
-    .widget_custom_html:first-of-type {
+    .ez-toc-widget-container {
         background-color: $info;
         padding-bottom: 30px;
+        
         .widget-title {
             margin-bottom: 20px;
             padding: 20px;
             border-bottom: 1px solid #C9C9C9;
+            font-family: 'Raleway Bold', sans-serif;
+            font-weight: 700;
         }
         ul {
             display: block;
             padding-left: 20px;
+            .active::before {
+                content: none;
+            }
+            a {
+                text-decoration: none;
+                color: $dark;
+                font-size: 16px;
+            }
         }
     }
     .widget_custom_html:last-of-type {
@@ -21,12 +32,14 @@
         ul {
             justify-content: center;
         }
-    }    
+    }
+    @media (max-width: 768px) {
+        display: none;
+    }   
 }
 .logged-in #review-left-sidebar {
     top: 90px;
 }
-
 .widget_custom_html {
      .widget-title {
         padding: 20px;
