@@ -36,7 +36,7 @@ $text: #413f3f;
     width: 100%;
     border-bottom: 1px solid #f0f0f0;
 }
-.page-template-homepage #page {
+#page {
     padding-top: 75px;
 }
 #masthead .inside-header {
@@ -183,8 +183,20 @@ p {
     color: #191818;
 }
 #breadcrumbs {
-    padding-left: 15px;
-    font-size: 16px;
+    .text-muted {
+        color: #999999 !important;
+        position: relative;
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: -2rem;
+            transform: translateY(-50%);
+            content: '';
+            width: 15px;
+            height: 2px;
+            background: #666666;
+        }
+    }
 }
 
 /*****************
@@ -384,45 +396,11 @@ p {
     padding-left: 0 !important;
 }
 
-/********************
-***** Accordion *****
-*********************/
-// #accordionExample,
-// #accordionFlushExample {
-//     .accordion-item {
-//         border: none;
-//     }
-//     .accordion-item,
-//     .accordion-header,
-//     .accordion-button {
-//         background: transparent;
-//         position: relative;
-//     }
-//     .accordion-button {
-//         &:hover,
-//         &:focus {
-//             color: #000;
-//             box-shadow: none;
-//         }
-//     }
-//     .accordion-button::after {
-//         display: none;
-//     }
-//     .accordion-button::before {
-//         content: '\f105';
-//         font-family: FontAwesome;
-//         position: absolute;
-//         left: 0;
-//         transform: rotate(90deg);
-//     }
-//     .accordion-button.collapsed::before {
-//         transform: rotate(0);
-//     }
-// }
 @import './accordion';
 @import './pros-cons';
 @import './widget-custom-html';
 @import './related-widget';
+@import './authorbox';
 
 a.cta-btn {
     color: #fff;

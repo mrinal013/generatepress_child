@@ -7510,7 +7510,7 @@ textarea.form-control-lg {
   width: 100%;
   border-bottom: 1px solid #f0f0f0; }
 
-.page-template-homepage #page {
+#page {
   padding-top: 75px; }
 
 #masthead .inside-header {
@@ -7655,9 +7655,18 @@ p {
 .top-subheading {
   color: #191818; }
 
-#breadcrumbs {
-  padding-left: 15px;
-  font-size: 16px; }
+#breadcrumbs .text-muted {
+  color: #999999 !important;
+  position: relative; }
+  #breadcrumbs .text-muted::after {
+    position: absolute;
+    top: 50%;
+    right: -2rem;
+    transform: translateY(-50%);
+    content: '';
+    width: 15px;
+    height: 2px;
+    background: #666666; }
 
 /*****************
 ***** slider *****
@@ -7850,9 +7859,6 @@ p {
 .form > .widget {
   padding-left: 0 !important; }
 
-/********************
-***** Accordion *****
-*********************/
 #accordionFaq .accordion-button {
   padding-left: 0;
   padding-right: 0;
@@ -8007,6 +8013,10 @@ p {
 
 .logged-in .widget_related_widget {
   top: 92px; }
+
+.authorbox .text-muted {
+  font-size: 14px;
+  line-height: 30px; }
 
 a.cta-btn {
   color: #fff;
