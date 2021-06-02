@@ -10,7 +10,7 @@ $current_id = $author_post->ID;
     <div class="col-md-4 my-4">
         <div class="row mx-0 shadow">
             <div class="col-12 px-0">
-                <div class="post-thumbnail" style="background-image: url(<?php echo esc_attr( get_the_post_thumbnail_url( $current_id ) ); ?>);"></div>
+                <a href="<?php echo esc_attr( get_permalink( $current_id ) ); ?>"><div class="post-thumbnail" style="background-image: url(<?php echo esc_attr( get_the_post_thumbnail_url( $current_id ) ); ?>);"></div></a>
             </div>
             <div class="col-12 text-center px-0">
                 <div class="link-wrapper py-3">
