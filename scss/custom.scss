@@ -19,8 +19,9 @@
     src: url(../fonts/Inter-Regular.ttf);
 }
 
-$dark: #191818;
+$primary: #0056FB;
 $secondary: #F9F9F9;
+$dark: #191818;
 $info: #F3F9FE;
 $text: #413f3f;
 // $font-family-base: Helvetica, Arial, sans-serif;
@@ -404,10 +405,12 @@ p {
 
 a.cta-btn {
     color: #fff;
+    background-color: #0056fb;
     text-decoration: none;
         &:hover,
         &:focus {
             color: #fff;
+            background-color: #0056fb;
             box-shadow: none;
         }
 }

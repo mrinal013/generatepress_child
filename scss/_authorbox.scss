@@ -4,3 +4,29 @@
         line-height: 30px;
     }
 }
+.authorposts {
+    .post-thumbnail {
+        height: 250px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .link-wrapper {
+       font-family: 'Raleway-Bold';
+       font-size: 16px;
+       font-weight: 700;
+       min-height: 81px;
+       a {
+            color: $dark;
+            line-height: 1.5;
+            &:hover {
+               color: $primary;
+            }
+       }
+    } 
+}

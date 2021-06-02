@@ -41,7 +41,7 @@ class Foo_Widget extends WP_Widget {
                 $posts->the_post();
                 ?>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 text-center">
                         <?php echo esc_html( sprintf( "%'.02d", $posts->current_post + 1 ) ); ?>
                     </div>
                     <div class="col-md-9 gx-0">

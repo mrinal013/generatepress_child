@@ -278,7 +278,7 @@ function cta_button_cb() {
     ob_start();
     ?>
     <div class="d-grid">
-        <a href="<?php echo esc_attr( $link ); ?>" class="btn cta-btn" type="button" style="background-color: <?php echo esc_attr( $bg_color ); ?>"><?php echo esc_html( $text ); ?></a>
+        <a href="<?php echo esc_attr( $link ); ?>" class="btn cta-btn" type="button"><?php echo esc_html( $text ); ?></a>
     </div>
     <?php
     return ob_get_clean();
