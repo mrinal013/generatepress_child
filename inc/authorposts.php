@@ -1,18 +1,8 @@
-<?php
-$author_paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$author_post_args = array(
-    'post_type' => array( 'review', 'post' ),
-    'author'    => get_the_author_meta('ID'),
-    'posts_per_page' => 3,
-    'paged'     => $author_paged,
-);
-$author_posts = new WP_Query( $author_post_args );
-?>
-<h2 class="text-center"><?php echo esc_html( sprintf( 'See All Of %s\'s Article', $author_name ) ); ?></h2>
+<h3 class="text-center fw-bold"><?php echo esc_html( sprintf( 'See All Of %s\'s Article', $author_name ) ); ?></h3>
 <?php
 if ( ! empty( $author_posts->posts ) ) :
 ?>
-<div class="row authorposts mb-5">
+<div class="row authorposts mb-4">
 <?php
 foreach ( $author_posts->posts as $key => $author_post ) :
 $current_id = $author_post->ID;
@@ -30,10 +20,6 @@ $current_id = $author_post->ID;
         </div>
     </div>
 <?php endforeach; ?>
-<!-- pagination -->
-<?php
-
-?>
 </div>
 <?php
 endif;

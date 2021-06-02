@@ -149,13 +149,6 @@ add_action( 'wp','generate_remove_post_image', 20 );
 function generate_remove_post_image() {
     remove_action( 'generate_after_header', 'generate_featured_page_header', 10 );
 }
-// add_action( 'generate_after_header', function() {
-//     if ( ! is_home() && ! is_front_page() && ! is_author() ) {
-//         if ( function_exists('yoast_breadcrumb') ) {
-//             yoast_breadcrumb( '<div class="grid-container grid-parent pt-5"><p id="breadcrumbs" class="pt-5 text-uppercase">','</p></div>' );
-//         }
-//     }
-// } );
 
 // Register Custom Post Type
 function custom_post_type() {
@@ -412,6 +405,10 @@ function remove_editor_from_post() {
 
 include_once "inc/related-widget.php";
 
-// global $wpdb;
-// // $query = $wpdb->prepare( "SELECT * FROM $wpdb->postmeta WHERE `meta_key` = %s", $my_option_name );
-// $results = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->postmeta WHERE `meta_key` = %s", $my_option_name ) );
+function author_pagination_fix( $query ) {
+    if ( $query->is_author() && $query->is_main_query() ) :
+        $query->set( 'posts_per_page', 3 );
+        $query->set( 'post_type', array( 'review' ) );
+    endif;
+}
+add_action( 'pre_get_posts', 'author_pagination_fix' );

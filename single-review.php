@@ -13,8 +13,7 @@ $category = get_the_category();
             <h1 class="fs-2 raleway-semibold"><?php the_title(); ?></h1>
             <p class="post-author"><?php echo 'BY ' . esc_html( get_the_author_meta( 'display_name', $author_id ) ); ?></p>
             <?php the_content(); ?>
-            <?php include_once 'inc/authorbox1.php'; ?>
-            
+            <?php include_once 'inc/authorbox1.php'; ?>          
         </article>
         <aside class="col-md-3" id="review-right-sidebar">
             <?php dynamic_sidebar('sidebar-1'); ?>

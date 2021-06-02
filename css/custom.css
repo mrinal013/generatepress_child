@@ -8018,6 +8018,15 @@ p {
   font-size: 14px;
   line-height: 30px; }
 
+.authorbox.autorbox-authorpage .text-muted {
+  font-size: 16px;
+  border-bottom: 1px solid; }
+
+.authorbox .list-unstyled li {
+  margin-right: 10px; }
+  .authorbox .list-unstyled li:last-of-type {
+    margin-right: 0; }
+
 .authorposts .post-thumbnail {
   height: 250px;
   background-repeat: no-repeat;
@@ -8038,6 +8047,30 @@ p {
     line-height: 1.5; }
     .authorposts .link-wrapper a:hover {
       color: #0056FB; }
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3rem; }
+  .nav-links .page-numbers {
+    margin: 0 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #191818;
+    font-weight: 100;
+    font-style: 'Helvetica'; }
+    .nav-links .page-numbers.current {
+      background-color: rgba(0, 0, 0, 0.05); }
+    .nav-links .page-numbers .fas {
+      font-size: 10px; }
+    .nav-links .page-numbers:hover {
+      border-color: #dc3545;
+      color: #dc3545; }
 
 a.cta-btn {
   color: #fff;

@@ -1,0 +1,28 @@
+.nav-links {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+    .page-numbers {
+        margin: 0 5px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        color: $dark;
+        font-weight: 100;
+        font-style: 'Helvetica';
+        &.current {
+            background-color: rgba(0,0,0,0.05);
+        }
+        .fas {
+            font-size: 10px;
+        }
+        &:hover {
+            border-color: $danger;
+            color: $danger;
+        }
+    }
+}
