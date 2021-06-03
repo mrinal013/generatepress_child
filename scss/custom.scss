@@ -24,6 +24,11 @@ $secondary: #F9F9F9;
 $dark: #191818;
 $info: #F3F9FE;
 $text: #413f3f;
+$container-max-widths: (
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+) ;
 // $font-family-base: Helvetica, Arial, sans-serif;
 @import "../node_modules/bootstrap/scss/bootstrap";
 
@@ -35,7 +40,7 @@ $text: #413f3f;
     position: fixed;
     z-index: 99;
     width: 100%;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid $border-color;
 }
 #page {
     padding-top: 75px;
@@ -57,11 +62,13 @@ $text: #413f3f;
     font-family: 'Raleway Semibold', sans-serif;
 }
 #footer-widgets .footer-widgets-container {
-    padding-right: 0;
+    // padding-right: 0;
 }
 .site-content a {
-    color: #0056FB;
     text-decoration: underline;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 body {
     font-family: Helvetica;
@@ -100,7 +107,7 @@ p {
     margin-left: 0;
 }
 #masthead .main-navigation ul ul {
-    background-color: #fff;
+    background-color: $white;
     box-shadow: 0px 2px 10px -7px #4a596a;
     width: 150px;
 }
@@ -110,8 +117,8 @@ p {
 #masthead .main-navigation .main-nav ul ul li:hover > a,
 #masthead .main-navigation .main-nav ul ul li:focus > a,
 #masthead .main-navigation .main-nav ul ul li.sfHover > a {
-    background-color: #ffffff;
-    -webkit-text-stroke: 1px black;
+    background-color: $white;
+    -webkit-text-stroke: 1px $dark;
     -webkit-text-fill-color: #999;
 }
 #site-navigation .inside-navigation {
@@ -129,14 +136,14 @@ p {
 #site-navigation.main-navigation .main-nav ul li.sfHover > a,
 #site-navigation.main-navigation .menu-bar-item:hover > a,
 #site-navigation.main-navigation .menu-bar-item.sfHover > a {
-    color: #000;
+    color: $dark;
 }
 .main-navigation .main-nav ul li.menu-item-has-children {
     position: relative;
 }
 .main-navigation .main-nav ul li.menu-item-has-children::after {
     content: '';
-    background-color: #0056FB;
+    background-color: $primary;
     width: 35px;
     height: 4px;
     position: absolute;
@@ -155,11 +162,11 @@ p {
 #masthead .widget .search-field {
     width: 130px;
     height: 35px;
-    border-color: #DBDBDB;
-    background-color: #fff;
+    border-color: $border-color;
+    background-color: $white;
 }
 #masthead .search-submit {
-    background-color: #0056FB;
+    background-color: $primary;
     width: 40px;
     height: 35px;
     display: flex;
@@ -167,18 +174,18 @@ p {
 }
 #masthead .search-submit:hover,
 #masthead .search-submit:focus {
-    background-color: #fff;
-    border-color: #f0f0f0;
+    background-color: $white;
+    border-color: $border-color;
 }
 #masthead .search-submit:hover .icon-search,
 #masthead .search-submit:focus .icon-search {
-    color: #0042fa;
+    color: $primary;
 }
 /**************
 ***** Top *****
 ***************/
 .top-name {
-    color: #0056fb;
+    color: $primary;
 }
 .top-subheading {
     color: #191818;
@@ -272,17 +279,16 @@ p {
 }
 .main-title a,
 .main-title a:hover {
-    color: #000000;
+    color: $dark;
     font-size: 29px;
 }
 .main-navigation .main-nav ul li a {
-    color: #000000;
+    color: $dark;
 }
 .site .container.clients {
     background-color: #f9f9f9;
 }
 .bg-about .container.about {
-    max-width: 1180px;
     background-color: transparent;
 }
 .bg-about {
@@ -290,7 +296,7 @@ p {
     margin-bottom: 5rem;
 }
 .footer-widgets.bg-about {
-    background: #000;
+    background: $dark;
 }
 .bg-clients {
     background-color: #F9F9F9;
@@ -299,16 +305,26 @@ p {
 /*****************
 ***** Footer *****
 ******************/
-.site-footer .footer-widgets-container .social .inner-padding {
-    padding: 0;
+#footer-widgets {
+    .footer-widgets-container {
+        padding: 40px 0;
+    }
+    .inside-footer-widgets {
+        margin-left: 0;
+    }
+    .widget_custom_html {
+        padding-left: 15px;
+    }
 }
-.site-info {
-    background-color: #000000 !important;
+.site-footer {
+    .site-info {
+        background-color: $dark;
+    }
 }
 #footer-widgets h2,
 #footer-widgets p,
 #footer-widgets a {
-    color: #fff;
+    color: $white;
 }
 #footer-widgets h2 {
     font-family: 'Inter Semibold', sans-serif;
@@ -318,20 +334,12 @@ p {
     font-size: 14px;
 }
 
-.social {
-    padding-left: 25px;
-}
 .social .widget-title {
     font-family: Inter, sans-serif;
     font-size: 30px;
-    margin-top: -5px;
-    margin-bottom: 12px;
 }
 .social a {
     font-size: 18px !important;
-}
-.anchor.twitter {
-    margin-left: -15px;
 }
 
 .copyright-bar {
@@ -344,7 +352,7 @@ p {
 ***** Subscription Form *****
 ******************************/
 .form {
-    padding-right: 15px;
+    // padding-right: 15px;
 }
 .form .rm_compact_layout .rm_form_el_set.rm_form_el_two_third {
     width: 100%;
@@ -387,7 +395,7 @@ p {
     margin-top: 0 !important;
     position: relative;
     height: 50px;
-    background-color: #2E68CB !important;
+    background-color: $primary !important;
 }
 .rm_compact_layout .rm_form_el_button {
     display: inline-block !important;
@@ -406,12 +414,12 @@ p {
 
 a.cta-btn {
     color: #fff;
-    background-color: #0056fb;
+    background-color: $primary;
     text-decoration: none;
         &:hover,
         &:focus {
             color: #fff;
-            background-color: #0056fb;
+            background-color: $primary;
             box-shadow: none;
         }
 }
@@ -421,7 +429,7 @@ a.cta-btn {
         content: '';
         width: 3px;
         height: 100%;
-        background-color: #0056FB;
+        background-color: $primary;
         position: absolute;
         left: 0;
     }
@@ -447,6 +455,11 @@ a.cta-btn {
     }
     #masthead .site-branding {
         width: 50%;
+    }
+    .carousel-control {
+        position: absolute;
+        top:15px;
+        right: 0;
     }
     .bg-about>div {
         padding-left: 15px !important;

@@ -45,7 +45,7 @@ class Foo_Widget extends WP_Widget {
                         <?php echo esc_html( sprintf( "%'.02d", $posts->current_post + 1 ) ); ?>
                     </div>
                     <div class="col-md-9 gx-0">
-                        <h6><?php the_title(); ?></h6>
+                        <h6><a href="<?php the_permalink(); ?>" class="fw-bold text-decoration-none"><?php the_title(); ?></a></h6>
                         <p><?php echo esc_html( get_the_excerpt() ); ?></p>
                     </div>
                 </div>

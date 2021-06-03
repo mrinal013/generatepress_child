@@ -4,8 +4,7 @@
     height: max-content;
     .ez-toc-widget-container {
         background-color: $info;
-        padding-bottom: 30px;
-        
+        padding-bottom: 30px; 
         .widget-title {
             margin-bottom: 20px;
             padding: 20px;
@@ -28,7 +27,7 @@
     }
     .widget_custom_html:last-of-type {
         padding: 20px;
-        background-color: #000;
+        background-color: $dark;
         ul {
             justify-content: center;
         }
@@ -64,7 +63,6 @@
                 margin-bottom: 15px;
                 background-color: transparent;
             }
-
             a {
                 font-weight: 700;
                 text-decoration: none;

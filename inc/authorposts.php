@@ -1,4 +1,4 @@
-<h3 class="text-center fw-bold"><?php echo esc_html( sprintf( 'See All Of %s\'s Article', $author_name ) ); ?></h3>
+<h3 class="text-center fw-bold mt-4"><?php echo esc_html( sprintf( 'See All Of %s\'s Article', $author_name ) ); ?></h3>
 <?php
 if ( ! empty( $author_posts->posts ) ) :
 ?>

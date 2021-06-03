@@ -12,7 +12,7 @@
         font-family: 'Raleway Bold', sans-serif;
         font-size: 20px;
         font-weight: 700;
-        border-bottom: 1px solid #C9C9C9;
+        border-bottom: 1px solid $border-color;
         padding: 20px;
     }
     .row {
@@ -22,21 +22,23 @@
         font-family: 'Raleway Bold', sans-serif;
         font-size: 33px;
         margin-top: -15px;
-        color: #C9C9C9;
+        color: $gray-400;
         padding: 0;
     }
     .col-md-9 {
         padding-right: 20px;
     }
     h6 {
-        font-family: 'Raleway Semibold', sans-serif;
-        font-size: 14px;
-        font-weight: 700;
         margin: 0;
+        a {
+            font-family: 'Raleway Semibold', sans-serif;
+            font-size: 14px;
+            color: $dark;
+        }
     }
     p {
         font-size: 12px;
-        color: #C9C9C9;
+        color: $gray-500;
     }
 }
 .logged-in .widget_related_widget {
