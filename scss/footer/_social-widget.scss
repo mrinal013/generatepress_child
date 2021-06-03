@@ -1,0 +1,48 @@
+.social .widget-title {
+    font-family: Inter, sans-serif;
+    font-size: 30px;
+}
+.social a {
+    font-size: 18px !important;
+}
+
+.widget_custom_html {
+    .widget-title {
+       padding: 20px;
+       padding: 0;
+       font-family: 'Raleway Bold', sans-serif;
+   }
+   .custom-html-widget {
+       padding: 0;
+       ul {
+           margin-top: 0;
+           display: flex;
+       }
+       li {
+           margin-bottom: 0;
+           margin-right: 10px;
+           &:last-of-type {
+               margin-right: 0;
+           }
+           h6 a,
+           li {
+               font-size: 16px;
+               margin-bottom: 15px;
+               background-color: transparent;
+           }
+           a {
+               font-weight: 700;
+               text-decoration: none;
+               background-color: #232323;
+               color: $dark;
+               padding: 8px;
+               i {
+                   width: 25px;
+                   text-align: center;
+                   color: $white;
+               }
+
+           }
+       }
+   }
+}

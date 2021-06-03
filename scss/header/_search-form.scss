@@ -1,0 +1,25 @@
+/************************
+***** Header search *****
+*************************/
+#masthead .widget .search-field {
+    width: 130px;
+    height: 35px;
+    border-color: $border-color;
+    background-color: $white;
+}
+#masthead .search-submit {
+    background-color: $primary;
+    width: 40px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+}
+#masthead .search-submit:hover,
+#masthead .search-submit:focus {
+    background-color: $white;
+    border-color: $border-color;
+}
+#masthead .search-submit:hover .icon-search,
+#masthead .search-submit:focus .icon-search {
+    color: $primary;
+}

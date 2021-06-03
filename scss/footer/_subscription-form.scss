@@ -1,0 +1,53 @@
+/***************************
+***** Subscription Form *****
+******************************/
+.form .rm_compact_layout .rm_form_el_set.rm_form_el_two_third {
+    width: 100%;
+}
+.rm_compact_layout .rm_form_el_set {
+    padding: .3em .5em .5em 0 !important;
+}
+.form .rm-form-style1 input[type="email"], .rm-form-style1 input[name="email"] {
+    background-image: none;
+    font-size: 14px;
+    height: 50px;
+    border:1px solid #dbdbdb;
+    background-color: transparent;
+    padding-left: 15px;
+}
+.rm_form_message {
+    color: #fff;
+}
+.rm_form_container {
+    position: relative;
+}
+.rm_form_container::after {
+    content: '';
+    background: url('../fonts/Vector.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    right: 22px;
+    transform: translateY(-50%);
+}
+.rm_form_el_set.rm_form_el_button {
+    position: absolute;
+    right: 0;
+}
+.rm_form_field.rm_button {
+    padding: 15px 25px !important;
+    margin-top: 0 !important;
+    position: relative;
+    height: 50px;
+    background-color: $primary !important;
+}
+.rm_compact_layout .rm_form_el_button {
+    display: inline-block !important;
+    width: auto !important;
+}
+.form>.widget {
+    padding-left: 0 !important;
+}

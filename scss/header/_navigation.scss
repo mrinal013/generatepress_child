@@ -1,0 +1,78 @@
+/*********************
+***** Navigation *****
+**********************/
+.nav-float-right #site-navigation {
+    margin-left: 0;
+}
+.main-navigation .main-nav ul li a {
+    padding-left: 35px;
+    padding-right: 35px;
+    font-weight: 600;
+}
+#masthead .site-branding {
+    width: 15%;
+    font-family: Inter, sans-serif;
+}
+#masthead #site-navigation {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+}
+#masthead .main-navigation ul ul {
+    background-color: $white;
+    box-shadow: 0px 2px 10px -7px #4a596a;
+    width: 150px;
+}
+#masthead .main-navigation .main-nav ul ul li > a {
+    color: #999999;
+}
+#masthead .main-navigation .main-nav ul ul li:hover > a,
+#masthead .main-navigation .main-nav ul ul li:focus > a,
+#masthead .main-navigation .main-nav ul ul li.sfHover > a {
+    background-color: $white;
+    -webkit-text-stroke: 1px $dark;
+    -webkit-text-fill-color: #999;
+}
+#site-navigation .inside-navigation {
+    width: 100%;
+}
+#site-navigation #primary-menu {
+    margin: 0 auto;
+}
+#site-navigation #menu-main-menu {
+    justify-content: center;
+}
+#site-navigation.main-navigation .main-nav ul li > a,
+#site-navigation.main-navigation .main-nav ul li:hover > a,
+#site-navigation.main-navigation .main-nav ul li:focus > a,
+#site-navigation.main-navigation .main-nav ul li.sfHover > a,
+#site-navigation.main-navigation .menu-bar-item:hover > a,
+#site-navigation.main-navigation .menu-bar-item.sfHover > a {
+    color: $dark;
+}
+.main-navigation .main-nav ul li.menu-item-has-children {
+    position: relative;
+}
+.main-navigation .main-nav ul li.menu-item-has-children::after {
+    content: '';
+    background-color: $primary;
+    width: 35px;
+    height: 4px;
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+}
+#site-navigation.main-navigation .main-nav ul li.menu-item-has-children>a {
+    padding-right: 22px;
+}
+.main-navigation .menu-item-has-children .dropdown-menu-toggle {
+    display: none;
+}
+#masthead .main-navigation:not(.toggled) ul li.sfHover>ul,
+#masthead .main-navigation:not(.toggled) ul li:hover>ul {
+    left: 18px;
+}
+.main-navigation .main-nav ul li a {
+    color: $dark;
+}

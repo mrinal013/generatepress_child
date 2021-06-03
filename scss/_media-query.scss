@@ -1,0 +1,116 @@
+/**********************
+***** Media Query *****
+***********************/
+@media screen and (max-width: 768px) {
+    .has-inline-mobile-toggle .header-widget,
+    .has-inline-mobile-toggle #site-navigation {
+        display: none;
+    }
+    #page {
+        padding-top: 0;
+    }
+    #masthead {
+        position: relative;
+    }
+    #masthead .site-branding {
+        width: 50%;
+    }
+    .carousel-control {
+        position: absolute;
+        top:15px;
+        right: 0;
+    }
+    .bg-about>div {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    #footer-widgets .footer-widgets-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    } 
+}
+@media screen and (max-width: 768px) and (min-width: 576px) {
+    h1.raleway-semibold {
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+    .caption-div>p {
+        margin-bottom: 0;
+    }
+    .carousel-caption {
+        padding-top: 0;
+    }
+    #footer-widgets>div {
+        padding-left: 0;
+    }
+    .fs-md-1 {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .fs-md-1 {
+        font-size: 20px;
+    }
+    .stay-healthy-posts .col-lg-12.col-md-6 {
+        width: 50%;
+    }
+    .carousel-control {
+        position: absolute;
+        top:15px;
+        right: 0;
+    }
+    #carouselExampleCaptions {
+        padding-top: 30px;
+        border-bottom: 1px solid #C8C8C8;
+    }
+    .top-posts {
+        margin-top: 45px;
+    }
+    .caption-div {
+        padding-right: 0;
+    }
+    .m-sm-0 {
+        margin: 0 !important;
+    }
+    .p-sm-2 {
+        padding: 1rem !important;
+    }
+    .clients > .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .order-sm-1 {
+        order: 1;
+    }
+    .order-sm-2 {
+        order: 2;
+    }
+    .order-sm-3 {
+        order: 3;
+    }
+    .order-sm-4{
+        order: 4;
+    }
+    .w-sm-50 {
+        width: 50%;
+    }
+    #footer-widgets h2 {
+        margin-bottom: .5rem;
+    }
+    .social {
+        margin-bottom: 20px;
+        padding-left: 15px;
+    }
+    .rm_compact_layout .rm_form_el_set {
+        padding: 0 !important;
+    }
+    .textwidget .rm_form_container {
+        margin-bottom: 60px;
+    }
+    .site .container.clients {
+        line-height: 60px;
+    }
+    .footer-widgets-container {
+        padding: 0;
+    }
+}

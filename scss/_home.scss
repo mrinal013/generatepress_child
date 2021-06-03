@@ -1,0 +1,15 @@
+/******************
+***** Home *****
+******************/
+.top-name {
+    color: $primary;
+}
+.top-subheading {
+    color: #191818;
+}
+@import './home/slider';
+@import './home/top-posts';
+@import './home/client-section';
+@import './home/stay-healthy-section';
+@import './home/sport-nutrition-section';
+@import './home/about-section';

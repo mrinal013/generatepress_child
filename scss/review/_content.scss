@@ -1,0 +1,25 @@
+.site-content a {
+    text-decoration: underline;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.left-bar {
+    position: relative;
+    &:before {
+        content: '';
+        width: 3px;
+        height: 100%;
+        background-color: $primary;
+        position: absolute;
+        left: 0;
+    }
+}
+@import './thumbnail';
+@import './pros-cons';
+@import './cta';
+@import './product-table';
+@import './notice';
+@import './faq-accordion';
+@import './user-review';
+@import './authorbox';

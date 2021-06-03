@@ -6,7 +6,8 @@
  * Only edit this file if you have direct access to it on your server (to fix errors if they happen).
  */
 
-function yield_enqueue_style() {
+add_action( 'wp_enqueue_scripts', 'custom_enqueue' );
+function custom_enqueue() {
     if ( is_child_theme() ) {
         // load parent stylesheet first if this is a child theme
 	    wp_enqueue_style( 'parent-stylesheet', trailingslashit( get_template_directory_uri() ) . 'style.css', false );
@@ -14,14 +15,13 @@ function yield_enqueue_style() {
     }
     
     // load active theme stylesheet in both cases
-    wp_enqueue_style( 'fa', 'https://use.fontawesome.com/releases/v5.15.3/css/all.css' );
+    wp_enqueue_style( 'fa', get_stylesheet_directory_uri() . '/css/font-awesome.css' );
     wp_enqueue_style( 'custom-sylesheet', get_stylesheet_directory_uri() . '/css/custom.css' );
     wp_enqueue_style( 'theme-stylesheet', get_stylesheet_uri(), false );
 
     wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.bundle.min.js', array(), null, true );
     wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), null, true );
 }
-add_action( 'wp_enqueue_scripts', 'yield_enqueue_style' );
 
 add_action( 'generate_before_footer_content', 'about_section' );
 function about_section() {
@@ -32,18 +32,15 @@ function about_section() {
 add_action( 'wp_head', 'remove_parent_theme_action' );
 function remove_parent_theme_action() {
     remove_action( 'generate_credits', 'generate_add_footer_info' );
-    // remove_action( 'generate_footer', 'generate_construct_footer' );
     remove_action( 'generate_footer', 'generate_construct_footer_widgets', 5 );
     remove_action( 'generate_footer', 'generate_construct_footer' );
 }
 
-add_action( 'generate_credits', 'yield_footer_copyright' );
 /**
  * Add the copyright to the footer
- *
- * @since 0.1
  */
-function yield_footer_copyright() {
+add_action( 'generate_credits', 'custom_footer_copyright' );
+function custom_footer_copyright() {
     $copyright = sprintf(
         '<span class="copyright">Copyright &copy; %1$s %2$s</span> Use of this web site constitutes acceptance of the Terms of Use , Privacy Policy and Copyright Policy . The material appearing on is for educational use only. It should not be used as a substitute for professional medical advice, diagnosis or treatment. is a registered trademark of the Foundation. The Foundation and do not endorse any of the products or services that are advertised on the web site. Moreover, we do not select every advertiser or advertisement that appears on the web site-many of the advertisements are served by third party advertising companies.',
         date( 'Y' ), // phpcs:ignore
@@ -52,14 +49,14 @@ function yield_footer_copyright() {
     echo apply_filters( 'generate_copyright', $copyright ); // phpcs:ignore
 }
 
-if ( ! function_exists( 'yield_footer_widgets' ) ) {
-    add_action( 'generate_footer', 'yield_footer_widgets', 5 );
+if ( ! function_exists( 'custom_footer_widgets' ) ) {
+    add_action( 'generate_footer', 'custom_footer_widgets', 5 );
     /**
      * Build our footer widgets.
      *
      * @since 1.3.42
      */
-    function yield_footer_widgets() {
+    function custom_footer_widgets() {
         ?>
             <div id="footer-widgets" class="site footer-widgets bg-dark">
                 <div <?php generate_do_element_classes( 'inside_footer' ); ?>>
@@ -92,14 +89,14 @@ if ( ! function_exists( 'yield_footer_widgets' ) ) {
     }
 }
 
-if ( ! function_exists( 'yield_construct_footer' ) ) {
-    add_action( 'generate_footer', 'yield_construct_footer' );
+if ( ! function_exists( 'custom_construct_footer' ) ) {
+    add_action( 'generate_footer', 'custom_construct_footer' );
     /**
      * Build our footer.
      *
      * @since 1.3.42
      */
-    function yield_construct_footer() {
+    function custom_construct_footer() {
         $inside_site_info_class = '';
 
         if ( 'full-width' !== generate_get_option( 'footer_inner_width' ) ) {
@@ -122,7 +119,7 @@ if ( ! function_exists( 'yield_construct_footer' ) ) {
                  */
                 do_action( 'generate_before_copyright' );
                 ?>
-                <div class="copyright-bar">
+                <div class="copyright-bar d-md-block d-none">
                     <?php
                     /**
                      * generate_credits hook.
@@ -141,8 +138,8 @@ if ( ! function_exists( 'yield_construct_footer' ) ) {
 }
 
 /* Change Search ... to Search */
-add_filter( 'generate_search_placeholder', 'yield_search_placeholder' );
-function yield_search_placeholder() {
+add_filter( 'generate_search_placeholder', 'custom_search_placeholder' );
+function custom_search_placeholder() {
     return 'Search';
 }
 add_action( 'wp','generate_remove_post_image', 20 );
@@ -151,6 +148,7 @@ function generate_remove_post_image() {
 }
 
 // Register Custom Post Type
+add_action( 'init', 'custom_post_type', 0 );
 function custom_post_type() {
 
 	$labels = array(
@@ -204,7 +202,7 @@ function custom_post_type() {
 	register_post_type( 'review', $args );
 
 }
-add_action( 'init', 'custom_post_type', 0 );
+
 
 /**
  * Get post thumbnail
@@ -220,13 +218,13 @@ function get_thumbnail_cb() {
 }
 
 /**
- * Pros & Cons area
+ * Pros & Cons
  */
 add_shortcode( 'pros_cons', 'pros_cons_cb' );
 function pros_cons_cb() {
     global $post;
-    $pros = get_field('pros', $post->ID );
-    $cons = get_field('cons', $post->ID );
+    $pros = get_field( 'pros', $post->ID );
+    $cons = get_field( 'cons', $post->ID );
     ob_start();
     ?>
     <div class="row pros-cons">
@@ -271,14 +269,14 @@ function cta_button_cb() {
     ob_start();
     ?>
     <div class="d-grid">
-        <a href="<?php echo esc_attr( $link ); ?>" class="btn cta-btn" type="button"><?php echo esc_html( $text ); ?></a>
+        <a href="<?php echo esc_url( $link ); ?>" class="btn cta-btn" type="button"><?php echo esc_html( $text ); ?></a>
     </div>
     <?php
     return ob_get_clean();
 }
 
 /**
- * Special text area
+ * Notice
  */
 add_shortcode( 'text', 'text_cb' );
 function text_cb() {
@@ -327,82 +325,7 @@ function faq_cb() {
     return ob_get_clean();
 }
 
-/**
- * User 
- */
-
-// New Menu
-add_action('admin_menu', 'admin_panel');
-function admin_panel() {
-	add_menu_page('Theme Panel', 'Theme Panel', 'manage_options', 'Theme Panel', '', 'dashicons-admin-page', 10);
-}
-
-add_action('admin_menu', 'admin_panel_menu');
-function admin_panel_menu() {
-	global $submenu;
-	$submenu['Theme Panel'][0] = array( 'Homepage', 'manage_options', "https://searchacademia.com/tests/mrinal/wp-admin/post.php?post=29&action=edit");
-	$submenu['Theme Panel'][1] = array( 'Review page', 'manage_options', "https://searchacademia.com/tests/mrinal/wp-admin/post.php?post=208&action=edit");
-    $submenu['Theme Panel'][2] = array( 'Author box', 'manage_options', "");
-}
-
-
-// disable emojis
-add_action( 'init', 'disable_emojis' );
-function disable_emojis() {
-	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-	remove_action( 'admin_print_styles', 'print_emoji_styles' );	
-	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );	
-	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-	
-	// Remove from TinyMCE
-	add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
-}
-
-
-/**
- * Filter out the tinymce emoji plugin.
- */
-function disable_emojis_tinymce( $plugins ) {
-	if ( is_array( $plugins ) ) {
-		return array_diff( $plugins, array( 'wpemoji' ) );
-	} else {
-		return array();
-	}
-}
-
-
-add_action( 'admin_enqueue_scripts', 'shapeSpace_disable_scripts_styles_admin_area', 100 );
-function shapeSpace_disable_scripts_styles_admin_area() {
-	wp_dequeue_style('jquery-ui-css');
-}
-
-
-
-function dequeue_jquery_migrate( $scripts ) {
-	if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
-		$scripts->registered['jquery']->deps = array_diff(
-			$scripts->registered['jquery']->deps,
-			[ 'jquery-migrate' ]
-		);
-	}
-}
-add_action( 'wp_default_scripts', 'dequeue_jquery_migrate' );
-
-if ( is_admin() ) {
-    add_action('init', 'remove_editor_from_post');
-}
-function remove_editor_from_post() {
-		$id = isset( $_GET['post'] ) ? $_GET['post'] : null;
-		$posts = array(29);
-		if ( in_array( $id, $posts ) ) {
-			$template = get_post_meta($id, '_wp_page_template', true);
-			remove_post_type_support('page', 'editor');
-		}
-}
-
+include_once "inc/theme-panel.php";
 include_once "inc/related-widget.php";
 
 function author_pagination_fix( $query ) {

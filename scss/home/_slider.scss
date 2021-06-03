@@ -1,0 +1,33 @@
+/*****************
+***** slider *****
+******************/
+.slider-description {
+    color: #413f3f;
+}
+.carousel-caption {
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.caption-div {
+    padding-right: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.caption-div h1,
+.caption-div p {
+    text-align: left;
+}
+.carousel-control {
+    margin-top: -44px;
+}
+.carousel-control-next,
+.carousel-control-prev {
+    width: auto;
+    padding: 10px;
+}
+.carousel-control-prev {
+    margin-right: 15px;
+}

@@ -1,0 +1,11 @@
+a.cta-btn {
+    color: #fff;
+    background-color: $primary;
+    text-decoration: none;
+        &:hover,
+        &:focus {
+            color: #fff;
+            background-color: $primary;
+            box-shadow: none;
+        }
+}

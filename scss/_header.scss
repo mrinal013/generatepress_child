@@ -1,0 +1,16 @@
+#masthead {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    border-bottom: 1px solid $border-color;
+}
+#masthead .inside-header {
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+#page {
+    padding-top: 75px;
+}
+@import './header/logo';
+@import './header/navigation';
+@import './header/search-form';

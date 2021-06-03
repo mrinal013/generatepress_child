@@ -1,0 +1,35 @@
+/*****************
+***** Footer *****
+******************/
+#footer-widgets {
+    .footer-widgets-container {
+        padding: 40px 0;
+    }
+    .inside-footer-widgets {
+        margin-left: 0;
+    }
+    .widget_custom_html {
+        padding-left: 15px;
+    }
+}
+.site-footer {
+    .site-info {
+        background-color: $dark;
+    }
+}
+#footer-widgets h2,
+#footer-widgets p,
+#footer-widgets a {
+    color: $white;
+}
+#footer-widgets h2 {
+    font-family: 'Inter Semibold', sans-serif;
+}
+#footer-widgets a {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+}
+@import './footer/social-widget';
+@import './footer/about-category-widget';
+@import './footer/subscription-form';
+@import './footer/copyright';
